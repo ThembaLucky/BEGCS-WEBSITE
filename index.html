@@ -8,9 +8,13 @@
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles.css">
         <script src="scripts.js" defer></script>
-        <script src="booking.js.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        
 
         <title>BEGCS</title>
+
+    
     </head>
     
 <body>
@@ -232,8 +236,78 @@
         </div>
     </section>
     
+    <section id="why-clean-pc" class="why-clean-section">
+        <div class="why-clean-container">
+            <h1>Why Clean Your PC?</h1>
+            <p>Regularly cleaning your PC is essential for maintaining its performance, longevity, and your health. Here are some reasons why:</p>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Boost Performance</h3>
+                    <p>
+                        Dust and debris can clog your PC's cooling system, causing overheating and slower performance. 
+                        Keeping it clean ensures optimal functionality and speed.
+                    </p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-laptop-medical"></i>
+                    <h3>Prevent Damage</h3>
+                    <p>
+                        Accumulated dirt can lead to short circuits, fan failure, or hardware damage. 
+                        Cleaning reduces these risks and extends the life of your device.
+                    </p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-bacteria"></i>
+                    <h3>Improve Hygiene</h3>
+                    <p>
+                        PCs and keyboards harbor germs that can cause illnesses. Regular cleaning eliminates bacteria 
+                        and provides a safer, healthier workspace.
+                    </p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Reduce E-Waste</h3>
+                    <p>
+                        Prolonging the lifespan of your PC through proper maintenance reduces electronic waste, contributing to environmental sustainability.
+                    </p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Maintain System Stability</h3>
+                    <p>
+                        Over time, dirt and dust can cause system instability, including crashes and slowdowns. Regular cleaning helps ensure your PC runs smoothly and without interruptions.
+                    </p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Enhance Cooling Efficiency</h3>
+                    <p>
+                        Dust buildup in vents and fans can block airflow, leading to inefficient cooling. A clean PC allows for better air circulation, preventing thermal throttling and overheating.
+                    </p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Protect Sensitive Components</h3>
+                    <p>
+                        Dust and grime can infiltrate sensitive components like your CPU or GPU, leading to potential malfunctions. Regular cleaning helps protect these valuable parts from damage.
+                    </p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Boost Energy Efficiency</h3>
+                    <p>
+                        A clean PC runs more efficiently, consuming less power. This not only saves you money on your electricity bill but also reduces the environmental impact of unnecessary energy consumption.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section id="testimonials" class="testimonials-section">
+        
         <div class="testimonial-container">
+            <h1>Testimonials</h1>
             <div class="testimonial-content">
                 <div class="quote-icon">
                     <i class="fas fa-quote-left"></i>
@@ -262,7 +336,7 @@
         <section id="book" class="booking-section">
             <div class="container">
                 <div class="booking-content">
-                    <!-- Left Content -->
+                   
                     <div class="booking-details">
                         <h1>Book Your Service Today</h1>
                         <p>
@@ -280,59 +354,109 @@
                         </p>
                     </div>
         
-                    <!-- Right Content -->
-                    <div class="booking-form-container">
-                        <!-- Note: Removed the action and method attributes as they are unnecessary for client-side handling -->
-                        <form id="booking-form" class="booking-form" action="https://formsubmit.co/begcs.computercare@gmail.com" method="POST">
-        
-                            <h2>Reserve Your Spot</h2>
-                            <div class="form-group">
-                                <label for="name">Full Name:</label>
-                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                            </div>
-        
-                            <div class="form-group">
-                                <label for="email">Email Address:</label>
-                                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                            </div>
-        
-                            <div class="form-group">
-                                <label for="phone">Phone Number:</label>
-                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-                            </div>
-        
-                            <div class="form-group">
-                                <label for="service">Select Service:</label>
-                                <select id="service" name="service" required>
-                                    <option value="" disabled selected>Select a service</option>
-                                    <option value="electronics-cleaning">Electronics Cleaning</option>
-                                    <option value="community-empowerment">Community Empowerment</option>
-                                    <option value="custom-request">Custom Request</option>
-                                </select>
-                            </div>
-        
-                            <div class="form-group">
-                                <label for="date">Preferred Date:</label>
-                                <input type="date" id="date" name="date" required>
-                            </div>
-        
-                            <div class="form-group">
-                                <label for="time">Preferred Time:</label>
-                                <input type="time" id="time" name="time" required>
-                            </div>
-        
-                            <div class="form-group">
-                                <label for="message">Additional Notes:</label>
-                                <textarea id="message" name="message" rows="4" placeholder="Enter any special requests or notes (optional)"></textarea>
-                            </div>
-        
-                            <button type="submit" class="cta-button">Submit Booking</button>
-                        </form>
+                
+                    <form id="booking-form" class="booking-form">
+                        <h2>Reserve Your Spot</h2>
+                    
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="service">Select Service:</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="electronics-cleaning">Electronics Cleaning</option>
+                                <option value="community-empowerment">Community Empowerment</option>
+                                <option value="custom-request">Custom Request</option>
+                            </select>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="date">Preferred Date:</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="time">Preferred Time:</label>
+                            <input type="time" id="time" name="time" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="message">Additional Notes:</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Enter any special requests or notes (optional)"></textarea>
+                        </div>
+                    
+                       
+        <button type="submit" class="cta-button" id="bookingButton">Submit Booking</button>
+                    </form>
+                    
+
+    <script>
+        document.getElementById("booking-form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            let templateParams = {
+                user_name: document.getElementById("name").value,
+                user_email: document.getElementById("email").value,
+                user_phone: document.getElementById("phone").value,
+                selected_service: document.getElementById("service").value,
+                preferred_date: document.getElementById("date").value,
+                preferred_time: document.getElementById("time").value,
+                user_message: document.getElementById("message").value
+            };
+
+            const button = document.getElementById('bookingButton');
+            button.disabled = true; // Disable the button
+            const originalText = button.innerHTML;
+            button.innerHTML = 'Loading';
+
+            let dots = 0;
+            const interval = setInterval(function() {
+                dots = (dots + 1) % 4;
+                button.innerHTML = 'Loading' + '.'.repeat(dots);
+            }, 500); // Update dots every 500ms
+
+            emailjs.init("VTEmOmWpfdqvD7hrK");
+
+            emailjs.send("service_8vv4k9o", "template_ik70tw2", templateParams)
+                .then(function(response) {
+                    clearInterval(interval);
+                    button.innerHTML = originalText;
+                    button.disabled = false; // Enable the button
+                    alert("Booking confirmed! ✅ Check your email.");
+                    document.getElementById("booking-form").reset(); 
+                })
+                .catch(function(error) {
+                    clearInterval(interval);
+                    button.innerHTML = originalText;
+                    button.disabled = false; // Enable the button
+                    console.error("EmailJS Error:", error);
+                    alert("Oops! Something went wrong. ❌ Please check the console for more details.");
+                });
+        });
+    </script>
+                    
                     </div>
                 </div>
             </div>
         </section>
         
+   
+
+
+=
     
     <section id="contact" class="contact-section">
         <div class="contact-container">
@@ -351,7 +475,7 @@
                 </div>
             </div>
     
-            <!-- Services Section -->
+         
             <div class="contact-column">
                 <h3>Our Services</h3>
                 <ul>
@@ -362,18 +486,17 @@
                 </ul>
             </div>
     
-            <!-- Explore Section -->
+         
             <div class="contact-column">
                 <h3>Explore</h3>
                 <ul>
-                    <li><a href="#">Why Clean Your PC?</a></li>
+                    <li><a href="#why-clean-pc">Why Clean Your PC?</a></li>
                     <li><a href="#">Common Issues Solved</a></li>
                     <li><a href="#">Careers</a></li>
-                    <li><a href="#">Client Testimonials</a></li>
+                    <li><a href="#testimonials">Client Testimonials</a></li>
                 </ul>
             </div>
     
-            <!-- Contact Section -->
             <div class="contact-column">
                 <h3>Contact</h3>
                 <ul>
@@ -385,9 +508,11 @@
             </div>
         </div>
     </section>
-    <a href="https://wa.me/068 197 0116" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/0796893074" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-    
+    <footer>
+        <p>&copy; 2025 BEGCS - All rights reserved.</p>
+    </footer>
 </body>
 </html>
